@@ -1,0 +1,200 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="grid-containerCustomer">
+		<div class="backCustomer">
+			<div class="backCustomerPos">
+				<a class="backLinkCustomer"href="{% url 'home'  %}">
+					<i class="fas fa-arrow-circle-left customerArrow"></i>
+					<span class="backTextCustomer">Back to home</span>
+				</a>
+			</div>
+		</div>
+		<div class="customerInfo">
+			<div class="row no-gutters">
+
+					<div class="col-md-10 col-8">
+						<div class="conCustomer">
+							<div class="row">
+								<div class="col-md-3 col-sm-4">
+									<div class="customerName">
+                                    {{ current.username }}
+                                </div>
+								</div>
+								<div class="col-md-2 col-sm-12">
+									<div class="customerId">
+										<div class="customerIdText">User ID:</div>
+										<div id="customerIdNumber">{{ current.id}}</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-12">
+									<div class="customerEmail">
+										<div class="numberNavCustomer">
+                                        Email:
+                                    </div>
+										<div class="numberDataNavCustomer">
+                                        {{ current.email }}
+                                    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="lastRent lastRentPos">
+				<div class="row no-gutters">
+					<div class="col-12">
+						<div class="row">
+							<div class="col-12">
+								<div class="experienceTitle">
+									Your Order History 
+								</div>
+							</div>
+						</div>
+							
+						<div class="row no-gutters">
+                            <div class="col-2">
+                                <div class="headerTable">
+                                    Date:
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <div class="headerTable">
+                                    Order ID:
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="headerTable">
+                                    Car model:
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="headerTable">
+                                    Cancel:
+                                </div>
+							</div>
+                        </div>
+
+                        {% for x in orderList %}
+							
+						<div class="row align-items-center">
+							<div class="col-md-12 col-sm-12 clickFaq ">
+								<div class="questionUs rowSize">
+									<div class="row no-gutters ">
+										<div class="col-2">
+											<div class="infoTable ">
+												{{ x.orderDate|date:'d/m/y' }}
+											</div>
+										</div>
+										<div class="col-1">
+											{{x.id}}
+										</div>
+										<div class="col-4">
+											<div class="infoTable">
+											    {{ x.bikeModel}}
+											</div>
+										</div>
+                                        
+										<div class="col-3">
+											
+                                            <div class="">
+                                                <a href="{% url 'cancelOrder' id=x.id   %}" class="btn btn-sm animated-button thar-three">Cancel</a>
+                                               
+                                            </div>
+
+										</div>
+										<div class="col-2">
+
+                                            <i class="fas fa-arrow-circle-down .displayFaq arrowsUS"></i>
+										</div>
+									</div>
+								</div>
+								<div class="moreInfoCon open">
+									<div class="row no-gutters">
+										<div class="col-8">
+											<div class="row no-gutters">
+												<div class="col-8 col-md-6">
+													<div class="addInfo paddingAddInfo">
+														Pick Up Date :
+													</div>
+												</div>
+												<div class="col-4 col-md-6">
+													<div class="addInfo">
+														{{ x.startRent|date:'d/m/y' }}
+													</div>
+													
+												</div>
+											</div>
+											<div class="row no-gutters">
+												<div class="col-8  col-md-6">
+													<div class="addInfo paddingAddInfo">
+														Drop Off Date :
+													</div>
+												</div>
+												<div class="col-4  col-md-6">
+													<div class="addInfo">
+														{{ x.endRent|date:'d/m/y' }}
+													</div>
+													
+												</div>
+											</div>
+											<div class="row no-gutters">
+												<div class="col-8  col-md-6">
+													<div class="addInfo paddingAddInfo">
+														Pick up place :
+													</div>
+												</div>
+												<div class="col-4  col-md-6">
+													<div class="addInfo">
+														{{ x.pickUp   }}
+													</div>
+													
+												</div>
+											</div>
+											<div class="row no-gutters">
+												<div class="col-8  col-md-6">
+													<div class="addInfo paddingAddInfo">
+														Total price :
+													</div>
+												</div>
+												<div class="col-4  col-md-6">
+													<div class="addInfo">
+														{{ x.price  }}
+													</div>
+													
+												</div>
+											</div>
+											<div class="row no-gutters">
+												<div class="col-8  col-md-6">
+													<div class="addInfo paddingAddInfo">
+														order ID
+													</div>
+												</div>
+												<div class="col-4  col-md-6">
+													<div class="addInfo">
+														{{ x.id  }}
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+                        {% endfor  %}
+
+
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock  %}

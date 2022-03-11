@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% block content %}
+	
+<div class="container" style="margin-top: 15px;">
+    <div class="row">
+        {% for ob in bike %}
+          
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                  <div >
+                    <img src= "/images/{{ob.bike1}}"  class="galleryPicturesPosition" height="150px" width="200px"/>
+                  </div>
+                
+       
+              <div class="caption">
+                <strong>{{ ob.name }}</strong>
+                <p> Company Name: {{ ob.model }}<br>
+                    Cost Per Day: {{ ob.price }} Rs<br>
+                </p>
+                {% if user.is_authenticated  %}
+                <div class="pull-right">
+                    <a href="{% url 'bikePage' ob.id  %}" class="btn btn-sm animated-button thar-three">Detail</a>
+                   
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+    
+        {% endfor %}
+    </div>
+    </div>
+
+	{% endblock %}

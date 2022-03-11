@@ -1,0 +1,119 @@
+{% extends 'main.html' %} {% block content %}
+<div class="container posConf">
+    <div class="row">
+        <div class="col-md-12 col-12 ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="infoOrderConf">
+                        Your order info
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        User Name:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ current.username }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        Contact:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ current.email }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="titleModel">
+                        <i>{{ bike.model }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="dataConfPic">
+                        <img class="responsiveDataPic" src="{{ bike.bike1.url  }}" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        Pick up place:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ place }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        Pick up date:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ startDate }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        Drop off date:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ endDate }}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <div class="titleConf">
+                        Total price:
+                    </div>
+                </div>
+                <div class="col-md-8 col-7">
+                    <div class="dataConf">
+                        <i>{{ priceTotal }} Rs</i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 col-5">
+                    <a href="{% url 'pdfView' id=currentOrder %}">
+                        See PDF invoice
+                    </a>
+                </div>
+                <div class="col-md-8 col-7">
+                    <a href="{% url 'pdfDownload' id=currentOrder %}">
+                        Download invoice
+                    </a>
+                </div>
+            </div>
+            <div class="borderConf"></div>
+        </div>
+       
+    </div>
+</div>
+<script>
+    
+</script>
+{% endblock %}

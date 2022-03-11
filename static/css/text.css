@@ -1,0 +1,269 @@
+.brandOfBike{
+    text-align:left;
+    letter-spacing: -1px;
+    font-weight: 500;
+    font-size: 21px;
+    font-family: "Montserrat";
+    margin-bottom: -1vh; 
+}
+.modelOfBike{
+    text-align:left;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 29px;
+    margin-bottom: 1vh;
+    font-family: "Montserrat";
+}
+.maxsizeBike{
+    height:80%;
+}
+
+.conPosBike{
+    margin-top: 2vh;
+}
+.formBike{
+    width: 100%;
+    height: 100%;
+    
+}
+.textareaBike{
+    border:none !important;
+    border-bottom: 2px solid #fcc842 !important;
+}
+.contactBike{
+    color: #fcc842;
+    font-family: "Montserrat";
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+   
+   
+}
+.textBike{
+    color: black;
+    letter-spacing: -2px;
+    
+}
+.bikePricePos{
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 3vh;
+    
+}
+.bikePrice{
+    min-width: 100%;
+    height: 70%;
+    background-color: #fcc842;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 26px;
+    text-align: center;
+    padding-top:4px;
+    color: white;
+    
+}
+.texesPriceBike{
+    min-width: 100%;
+    height: 30%;
+    background-color:#242424;
+    text-align: center;
+    color: white;
+    font-family: "Montserrat";
+    font-size: 14px;
+    
+}
+.buttonBike{
+    width: 100%;
+    height: 12vh;
+    padding-top: 6vh;
+    display: none;
+}
+#buttonSendBike{
+    font-family: "Montserrat" !important;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding:10px 25px;
+}
+.aboutBike{
+    margin-top:5vh;
+}
+.overviewBike{
+    font-size: 29px;
+    color: black;
+    transform: skew(-0.06turn);
+}
+.overviewTextBike{
+    font-family: "Roboto";
+    font-size: 18px;
+    padding-top: 2vh;
+    text-align: left;
+}
+.infoBike1,.infoBike2,.infoBike3,.infoBike4{
+    width: 100%;
+    height: 20vh;
+    position: relative;
+}
+.infoBike1,.infoBike3{
+    border-right: 2px solid  #fcc842;
+}
+.infoBike1,.infoBike2{
+    border-bottom: 2px solid  #fcc842;;
+}
+.iconBike{
+    position: absolute;
+    left:35%;
+    top:45%;
+    
+}
+.iconStyleBike{
+    color:#fcc842;
+    font-size: 27px;
+}
+.textIconBike{
+    position: absolute;
+    left:45%;
+    top:55%;
+    font-family: "Montserrat";
+    font-size: 15px;
+    color: black;
+    font-weight: 700;
+}
+@media (min-width:720px){
+    .conPosBike{
+        margin-top: 5vh;
+    }
+    
+    .bikePricePos{
+      
+        margin-bottom: 3vh;
+        margin-top: -5vh;
+        
+    }
+    .bikePricePos{
+        width: 100%;
+        height: 10vh;
+        margin-bottom: 3vh;
+        
+    }
+    .bikePrice{
+        font-size: 26px;
+        padding-top:1.5vh;
+    }
+    .texesPriceBike{
+    padding-top: 5px;
+        
+    }
+    .reserveMobile{
+        display: none;
+    }
+    .buttonBike{
+        display: block;
+    }
+    .containerCrossCar{
+      
+        margin-top: 5vh;
+        margin-bottom: 10vh;
+    }
+    .infoBike1,.infoBike2,.infoBike3,.infoBike4{
+        width: 100%;
+        height: 10vh;
+        position: relative;
+    }
+}
+
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 0;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #FFF;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 450%;
+}
+
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 0px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+a.animated-button.thar-three {
+	color: rgb(68, 68, 68);
+	cursor: pointer;
+	display: block;
+	position: relative;
+	border: 2px solid #fcc842;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+a.animated-button.thar-three:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: nthree;
+}
+a.animated-button.thar-three:hover:before {
+	left: 0%;
+	right: auto;
+	width: 100%;
+}
+a.animated-button.thar-three:before {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: #fcc842;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}

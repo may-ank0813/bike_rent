@@ -1,0 +1,135 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="container conPosBike">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="brandOfBike">
+                {{ bikepage.model  }}
+                
+            </div>
+            <div class="modelOfBike">
+                {{ bikepage.name}} 
+            </div>
+            
+        </div>
+    </div>
+    <div class="row  ">
+        <div class="col-md-9  col-sm-12">
+            <div id="custCarousel" class="carousel slide  " data-ride="carousel" align="center">
+                <!-- slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="{{ bikepage.bike1.url  }}" alt="Hills" /></div>
+                    <div class="carousel-item"><img src="{{ bikepage.bike2.url  }}" alt="Hills" /></div>
+                    <div class="carousel-item"><img src="{{ bikepage.bike3.url  }}" alt="Hills" /></div>
+
+                </div>
+                <!-- Left right -->
+                <a class="carousel-control-prev maxsizeBike" href="#custCarousel" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a>
+                <a class="carousel-control-next maxsizeBike" href="#custCarousel" data-slide="next"> <span class="carousel-control-next-icon"></span> </a>
+                <!-- Thumbnails -->
+                <ol class="carousel-indicators list-inline">
+                    <li class="list-inline-item active">
+                        <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel">
+                            <img src="{{ bikepage.bike1.url  }}" class="img-fluid-check" />
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel"> 
+                            <img src="{{ bikepage.bike2.url  }}" class="img-fluid-check" /> 
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel"> 
+                            <img src="{{ bikepage.bike3.url  }}" class="img-fluid-check" />
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="bikePricePos">
+                        <div class="bikePrice">
+                            <span class="align-middle"><i>{{ bikepage.price  }}Rs per day</i></span>
+                            
+                        </div>
+                        <div class="texesPriceBike">
+                            <span class="align-middle">Included Taxes & Insurance  </span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                    <div class="contactBike">
+                        <i class="fas fa-paper-plane"></i> <span class="textBike"><i>CONTACT US</i></span>
+                    </div>
+                    <form id="contact-form" class="form" action="#" method="POST" role="form">
+                        {% csrf_token  %}
+                        <div class="form-group">
+                            
+                            <input type="text" class="form-control"  name="name" placeholder="Your name" tabindex="1" required>
+                        </div>                            
+                        <div class="form-group">
+                           
+                            <input type="email" class="form-control"  name="email" placeholder="Your Email" tabindex="2" required>
+                        </div>                            
+                        <div class="form-group">
+                            
+                            <input type="text" class="form-control" name="number" placeholder="Phone Number" tabindex="3">
+                        </div>                            
+                        <div class="form-group">
+                            <textarea rows="2" cols="10" name="message" class="form-control textareaCar" id="message" placeholder="Message..." tabindex="4" required></textarea>                                 
+                        </div>
+                        <div class="text-center">
+                            <button id='buttonSendBike' type="submit" class="btn btn-start-order ">Send </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        {% if user.is_authenticated  %}
+                        <div class="buttonBike">
+                            <a href="{% url 'createOrder' bikepage.id %}" class="btn btn-sm animated-button thar-three">Book this Bike</a>
+                        </div>
+                        {% else  %}
+                        <div class="buttonBike">
+                            <a href='' class="btn btn-sm animated-button thar-three">Book this Bike</a>
+                        </div>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-sm-12">
+            <div class="aboutBike">
+                <div class="overviewBike">Quick overview</div>
+                <div class="overviewTextBike">
+                    {{ bikepage.about  }}
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12">
+            <div class="containerCrossCar">
+                <div class="col-6">
+                    <div class="infoBike4">
+                        <div class="iconBike">
+                            <i class="fas fa-tachometer-alt iconStyleBike"></i>
+                        </div>
+                        <div class="textIconBike">
+                            {{   bikepage.topSpeed }} km/hr
+                        </div>
+                    </div>
+                </div>
+                   
+            </div>
+        </div>
+    </div>
+</div>
+
+  {% endblock %}
