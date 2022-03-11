@@ -221,11 +221,11 @@ def gallery(request):
     for x in picList:
         photo = Bike.objects.values_list(x)
         pictureList.append(photo)
-   
+    
     data = list(itertools.chain(*pictureList)) 
     data = list(itertools.chain(*data)) 
     data = list(filter(None, data))
-
+    print(data[::-1])
     context = {
         'data':data[::-1],
         'current' : current
